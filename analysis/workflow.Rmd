@@ -35,6 +35,16 @@ can modify the `_site.yml` directly to add a new tab.
 You can change the theme with `_site.yml`, or take direct control [using a custom CSS file](https://jdblischak.github.io/workflowr/articles/wflow-02-customization.html) to modify
 the appearance of your site as you wish.
 
+Following any updates to `_site.yml`, or cosmetic changes that affect all HTML 
+files you will need to use the `republish = TRUE` argument when publishing the
+updated site:
+
+```{r wflow-republish, echo = TRUE, eval = FALSE}
+wflow_publish("analysis/_site.yml", "Change the theme and nav bar", 
+              republish = TRUE)
+```
+
+
 # General advice
 
 My recommendation is to pick the stylistic settings and type of content you want
