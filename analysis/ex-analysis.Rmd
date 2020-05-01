@@ -20,7 +20,7 @@ library(tidyverse)
 ```{r figure-demo, echo = TRUE}
 tibble(x = rnorm(1000)) %>%
   ggplot(aes(x)) +
-  geom_histogram() +
+  geom_histogram(fill = "darkblue", alpha = 0.5) +
   theme_bw()
 ```
 
