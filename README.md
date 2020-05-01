@@ -1,5 +1,5 @@
-# lab_tutorial
+# `workflowr` lab tutorial
 
-A [workflowr][] project.
+Example repository to demonstrate the use of the [`workflowr`][] package.
 
-[workflowr]: https://github.com/jdblischak/workflowr
+[`workflowr`]: https://github.com/jdblischak/workflowr

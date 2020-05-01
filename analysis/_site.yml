@@ -9,7 +9,7 @@ navbar:
     href: about.html
   - text: Workflow
     href: workflow.html
-  - text: Example1
+  - text: Example
     href: ex-analysis.html
   - text: Resources
     href: resources.html

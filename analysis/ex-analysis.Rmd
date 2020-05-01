@@ -1,5 +1,5 @@
 ---
-title: "Example1"
+title: "Example"
 author: "ryurko"
 date: "2020-05-01"
 output: workflowr::wflow_html
