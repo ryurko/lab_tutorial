@@ -7,6 +7,12 @@ navbar:
     href: index.html
   - text: About
     href: about.html
+  - text: Workflow
+    href: workflow.html
+  - text: Example1
+    href: ex-analysis.html
+  - text: Resources
+    href: resources.html
   - text: License
     href: license.html
   right:

@@ -1,0 +1,54 @@
+---
+title: "Workflow"
+author: "ryurko"
+date: "2020-04-30"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+# Creating a new analysis file
+
+You can create a new analysis .Rmd file manually or using the `workflowr` package:
+
+```{r init-ex, echo = TRUE, eval = FALSE}
+wflow_open("analysis/ex-analysis.Rmd")
+```
+
+Once you have made your file and edits, the __workflow__ follows the same steps each time:
+
+#. build / knit the R Markdown files, `wflow_build()`,
+#. commit / publish updates, `wflow_publish()`,
+#. push updates to GitHub/GitLab, `wflow_git_push()`.
+
+If you are collaborating on the project then you should obviously follow the Git tenet:
+commit, pull, push. You can pull updates from collaborators via `wflow_git_pull()`.
+
+# Customizing the website
+
+In order to access the new analysis HTML file on the site, you need a link to it
+somehow. You can just use a [link on a page in markdown](ex-analysis.html). Or you 
+can modify the `_site.yml` directly to add a new tab.
+
+![](assets/site-edit.png)
+
+You can the theme and [use a custom CSS file](https://jdblischak.github.io/workflowr/articles/wflow-02-customization.html) to modify
+the appearance of your site as you wish.
+
+# General advice
+
+My recommendation is to pick the stylistic settings and type of content you want
+to enable easy navigation to early. __Any change you make to style or navigation
+affects the HTML pages for every analysis file.__ Meaning you will have to re-build
+all files each time regardless if that analysis was done from awhile before, and
+could take considerable time to re-run. 
+
+Also, you cannot directly use R Notebooks in the way of generating chunk output and
+easily uploading the resulting HTML. You still need to build the HTML files each time
+as in traditional R Markdown knitting. Because of this, I recommend performing time
+consuming tasks outside of the `analysis/` folder files. Instead use traditional
+scripts in the `code/` folder to pre-process, fit time consuming models, etc. Then
+you can use summaries / smaller dataset to display results or figures in the `analysis/`
+files. Additionally, you can also display figures by creating another sub-folder (e.g. `assets/`) in the `docs/` (or `public/` for GitLab) folder and referencing figures that way. 
+
+

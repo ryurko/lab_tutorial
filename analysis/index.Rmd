@@ -8,4 +8,128 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+# What is `workflowr`?
+
+![](assets/hex-workflowr.png)
+
+Created and maintained by [John Blischak](https://jdblischak.com/), with co-authors 
+[Peter Carbonetto](https://pcarbo.github.io/) and [Matthew Stephens](http://stephenslab.uchicago.edu/), the [`workflowr`](https://jdblischak.github.io/workflowr/) package provides a wrapper
+for creating / maintaining a research website using R Markdown and version control. 
+The package tagline is "_organized + reproducible + shareable data science in R_".
+
+The only requirements to use `workflowr` are a knowledge of `R` and `R` Markdown, with
+either a [GitHub](https://github.com/) or [GitLab](https://gitlab.com/) account to
+host your site. __No prior knowledge, [or even installation](https://jdblischak.github.io/workflowr/articles/wflow-04-how-it-works.html), of Git is necessary to get started!__
+
+# First steps...
+
+You can install `workflowr` via [CRAN](https://cran.r-project.org/package=workflowr):
+
+```{r install, echo = TRUE, eval = FALSE}
+install.packages("workflowr")
+```
+
+To create a project with `workflowr`, first access the package:
+
+```{r library, echo = TRUE, eval = FALSE}
+library(workflowr)
+```
+
+__If you have never created a Git repository before__: you first need to initialize
+Git with your name and email. This information is how Git tracks your changes, but
+this does NOT need to be the same name / email used for GitHub or GitLab. Since
+`workflowr` relies on [`git2r`](https://cran.r-project.org/package=git2r) (which
+is an interface to [`libgit2`](https://libgit2.github.com/) and the reason you 
+do NOT need to have Git installed prior to using), you can do this directly in `R` 
+with a `workflowr` function:
+
+```{r start-git, echo = TRUE, eval = FALSE}
+# Initialize your Git info (only need to do once per computer)
+wflow_git_config(user.name = "Your Name", user.email = "your@email")
+```
+
+Now (within your current directory) you can create a `workflowr` repository:
+
+```{r start-workflowr, echo = TRUE, eval = FALSE}
+wflow_start("lab_tutorial")
+```
+
+![](assets/wflow_start_output.png)
+
+This will change the current working directory to the newly created project
+folder, with the following layout:
+
+![](assets/wflow_directory.png)
+
+There are two __required__ subdirectories:
+
+#. `analysis/`: stores the R Markdown files of your analysis, along with `index.Rmd` (for the homepage) and  `_site.yml` (for the configuration settings such as theme),
+#. `docs/` (or `public/` for GitLab): stores the HTML files used for generating the site, as well as figures created by code chunks.
+
+Optional directories for organization include: `code/`, `data/`, and `output/`.
+
+# Publishing the website
+
+Initially the `docs/` (or `public/`) folder will be empty, because the starting three `analysis/`
+files (`index.Rmd`, `about.Rmd`, `license.Rmd`) were not 'knit' yet. Rather than
+manually doing this, `workflowr` naturally provides a function to generate the
+appropriate HTML files in the `docs/` folder:
+
+```{r build-demo, echo = TRUE, eval = FALSE}
+wflow_build()
+```
+
+![](assets/wflow_build.png)
+
+This builds each HTML file __in separate R sessions__ to avoid conflicts (such as
+shared variable names) and __sets the same seed__ from the `_workflowr.yml` settings.
+The `wflow_build()` function only builds R Markdown files if their .Rmd files have
+been modified more recently than the current HTML files. After running `wflow_build()` you
+will see the "website" in the Viewer tab of RStudio.
+
+However, "building" the site is not enough. In order to "publish" the website online,
+we need to specify which `analysis/` files to build and "publish" their resulting
+HTML files:
+
+```{r publish-demo, echo = TRUE, eval = FALSE}
+wflow_publish(c("analysis/index.Rmd", "analysis/about.Rmd", "analysis/license.Rmd"),
+              "Publish the initial files for lab_tutorial")
+```
+
+The first argument is a vector of the `analysis/` files to generate the HTML files
+for, followed by the __commit message__ describing the update. The convenience of
+using `wflow_publish()` is that it: (1) commits the R Markdown files, (2) builds
+their respective HTML files, and (3) commits the HTML files along with any other
+website style changes.
+
+In order to actually view the website for the project you need to link it to a 
+GitHub/GitLab repository. This will then host the HTML files via their Pages 
+feature. You can create the repository from within R (following permission prompts):
+
+```{r github-demo, echo = TRUE, eval = FALSE}
+wflow_use_github("ryurko", "lab_tutorial")
+```
+
+or using `wflow_use_gitlab()` for GitLab. __NOTE: GitHub Pages only works for PUBLIC
+accounts, meaning your in-progress research website will always be visible. While
+that is admirable, you might be more comfortable using GitLab instead since then you
+can host your website with a PRIVATE repository.__ Both are free to use.
+
+Once the above steps are complete, then you need to "push" your edits to their
+respective destinations:
+
+```{r push-demo, echo = TRUE, eval = FALSE}
+wflow_git_push()
+```
+
+In order for the GitHub pages site to appear you just need to do the following on
+your GitHub repository webpage: (1) go to Settings, (2) scroll to GitHub Pages,
+(3) choose “master branch docs/ folder” as the Source. Then after a few minutes the
+research website should be visible!
+
+
+
+
+
+
+

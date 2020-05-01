@@ -1,0 +1,22 @@
+---
+title: "Resources"
+author: "ryurko"
+date: "2020-04-30"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+# `workflowr`
+
+The package documentation is fantastic: https://jdblischak.github.io/workflowr/
+
+# Git
+
+By far the best resource for learning to use Git with R / RStudio is Jenny Bryan's 
+free online book: https://happygitwithr.com/
+
+# R Markdown
+
+[R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+

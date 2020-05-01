@@ -7,4 +7,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-Describe your project.
+This is an example website constructed to demonstrate how to use the [`workflowr` package](https://jdblischak.github.io/workflowr/).
+
+See the [Home tab](index.html) for an overview of the `workflowr` package.
+The [Workflow tab](workflow.html) demonstrates a walkthrough of creating
+a new analysis file. The [Resources tab](resources.html) provides links to 
+additional resources that may be of use.
