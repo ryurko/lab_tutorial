@@ -10,7 +10,9 @@ editor_options:
 
 # What is `workflowr`?
 
-![](assets/hex-workflowr.png)
+```{r hex, echo = FALSE, out.width = "200px", out.height = "200px"}
+knitr::include_graphics("assets/hex-workflowr.png")
+```
 
 Created and maintained by [John Blischak](https://jdblischak.com/), with co-authors 
 [Peter Carbonetto](https://pcarbo.github.io/) and [Matthew Stephens](http://stephenslab.uchicago.edu/), the [`workflowr`](https://jdblischak.github.io/workflowr/) package provides a wrapper
@@ -54,12 +56,16 @@ Now (within your current directory) you can create a `workflowr` repository:
 wflow_start("lab_tutorial")
 ```
 
-![](assets/wflow_start_output.png)
+```{r start-output, echo = FALSE, out.width = "500px", out.height = "200px"}
+knitr::include_graphics("assets/wflow_start_output.png")
+```
 
-This will change the current working directory to the newly created project
+This will change the current working directory to the newly created project 
 folder, with the following layout:
 
-![](assets/wflow_directory.png)
+```{r directory-fig, echo = FALSE, out.width = "200px", out.height = "500px"}
+knitr::include_graphics("assets/wflow_directory.png")
+```
 
 There are two __required__ subdirectories:
 
@@ -79,7 +85,9 @@ appropriate HTML files in the `docs/` folder:
 wflow_build()
 ```
 
-![](assets/wflow_build.png)
+```{r build-fig, echo = FALSE, out.width= "500px", out.height= "500px"}
+knitr::include_graphics("assets/wflow_build.png")
+```
 
 This builds each HTML file __in separate R sessions__ to avoid conflicts (such as
 shared variable names) and __sets the same seed__ from the `_workflowr.yml` settings.

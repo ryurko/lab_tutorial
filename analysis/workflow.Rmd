@@ -32,7 +32,7 @@ can modify the `_site.yml` directly to add a new tab.
 
 ![](assets/site-edit.png)
 
-You can the theme and [use a custom CSS file](https://jdblischak.github.io/workflowr/articles/wflow-02-customization.html) to modify
+You can change the theme with `_site.yml`, or take direct control [using a custom CSS file](https://jdblischak.github.io/workflowr/articles/wflow-02-customization.html) to modify
 the appearance of your site as you wish.
 
 # General advice
@@ -40,8 +40,8 @@ the appearance of your site as you wish.
 My recommendation is to pick the stylistic settings and type of content you want
 to enable easy navigation to early. __Any change you make to style or navigation
 affects the HTML pages for every analysis file.__ Meaning you will have to re-build
-all files each time regardless if that analysis was done from awhile before, and
-could take considerable time to re-run. 
+all files each time regardless of when that analysis was done before, which could
+take considerable time to re-run. 
 
 Also, you cannot directly use R Notebooks in the way of generating chunk output and
 easily uploading the resulting HTML. You still need to build the HTML files each time

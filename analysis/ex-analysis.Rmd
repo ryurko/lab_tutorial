@@ -20,7 +20,10 @@ library(tidyverse)
 ```{r figure-demo, echo = TRUE}
 tibble(x = rnorm(1000)) %>%
   ggplot(aes(x)) +
-  geom_histogram(fill = "darkblue", alpha = 0.5) +
+  geom_histogram(fill = "darkblue", alpha = 0.5,
+                 color = "black") +
+  labs(x = "Random variable x", 
+       y = "Frequency") +
   theme_bw()
 ```
 
