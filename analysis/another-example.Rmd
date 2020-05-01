@@ -1,0 +1,26 @@
+---
+title: "another-example"
+author: "ryurko"
+date: "2020-05-01"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r, warning = FALSE, message = FALSE}
+library(tidyverse)
+```
+
+
+## Plot
+
+```{r plot}
+tibble(x = rnorm(1000)) %>%
+  ggplot(aes(x)) +
+  geom_histogram() +
+  theme_bw()
+```
+
+
