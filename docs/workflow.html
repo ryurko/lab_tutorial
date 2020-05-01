@@ -17,7 +17,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -405,10 +405,10 @@ div.tocify {
   <a href="resources.html">Resources</a>
 </li>
 <li>
-  <a href="about.html">About</a>
+  <a href="license.html">License</a>
 </li>
 <li>
-  <a href="license.html">License</a>
+  <a href="about.html">About</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -546,16 +546,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtreed7bb6a4cf6ed3348a43e535327bba41d77b2af63targetblankd7bb6a4a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ryurko/lab_tutorial/tree/d7bb6a4cf6ed3348a43e535327bba41d77b2af63" target="_blank">d7bb6a4</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtreeef9970ca0548e61214d093c58dcb4c642247acc8targetblankef9970ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ryurko/lab_tutorial/tree/ef9970ca0548e61214d093c58dcb4c642247acc8" target="_blank">ef9970c</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtreed7bb6a4cf6ed3348a43e535327bba41d77b2af63targetblankd7bb6a4a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtreeef9970ca0548e61214d093c58dcb4c642247acc8targetblankef9970ca" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ryurko/lab_tutorial/tree/d7bb6a4cf6ed3348a43e535327bba41d77b2af63" target="_blank">d7bb6a4</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ryurko/lab_tutorial/tree/ef9970ca0548e61214d093c58dcb4c642247acc8" target="_blank">ef9970c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -603,6 +603,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ryurko/lab_tutorial/blob/ef9970ca0548e61214d093c58dcb4c642247acc8/analysis/workflow.Rmd" target="_blank">ef9970c</a>
+</td>
+<td>
+ryurko
+</td>
+<td>
+2020-05-01
+</td>
+<td>
+Change the theme and nav bar
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ryurko/lab_tutorial/b7c655ca0e0075adf4e4abe9be63e23743d46624/docs/workflow.html" target="_blank">b7c655c</a>
+</td>
+<td>
+ryurko
+</td>
+<td>
+2020-05-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -695,6 +729,9 @@ Create working site with initial walkthrough and examples
 <p>In order to access the new analysis HTML file on the site, you need a link to it somehow. You can just use a <a href="ex-analysis.html">link on a page in markdown</a>. Or you can modify the <code>_site.yml</code> directly to add a new tab.</p>
 <p><img src="assets/site-edit.png" /></p>
 <p>You can change the theme with <code>_site.yml</code>, or take direct control <a href="https://jdblischak.github.io/workflowr/articles/wflow-02-customization.html">using a custom CSS file</a> to modify the appearance of your site as you wish.</p>
+<p>Following any updates to <code>_site.yml</code>, or cosmetic changes that affect all HTML files you will need to use the <code>republish = TRUE</code> argument when publishing the updated site:</p>
+<pre class="r"><code>wflow_publish(&quot;analysis/_site.yml&quot;, &quot;Change the theme and nav bar&quot;, 
+              republish = TRUE)</code></pre>
 </div>
 <div id="general-advice" class="section level1">
 <h1>General advice</h1>
