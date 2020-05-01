@@ -9,6 +9,8 @@ navbar:
     href: workflow.html
   - text: Example
     href: ex-analysis.html
+  - text: Another example
+    href: another-example.html
   - text: Resources
     href: resources.html
   - text: License
@@ -23,5 +25,5 @@ output:
   workflowr::wflow_html:
     toc: yes
     toc_float: yes
-    theme: darkly
+    theme: cosmo
     highlight: textmate
