@@ -445,16 +445,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtreeef9970ca0548e61214d093c58dcb4c642247acc8targetblankef9970ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ryurko/lab_tutorial/tree/ef9970ca0548e61214d093c58dcb4c642247acc8" target="_blank">ef9970c</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtree12005cbd1eafd57aeb0c0c9f55b1124852dfb836targetblank12005cba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ryurko/lab_tutorial/tree/12005cbd1eafd57aeb0c0c9f55b1124852dfb836" target="_blank">12005cb</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtreeef9970ca0548e61214d093c58dcb4c642247acc8targetblankef9970ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtree12005cbd1eafd57aeb0c0c9f55b1124852dfb836targetblank12005cba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ryurko/lab_tutorial/tree/ef9970ca0548e61214d093c58dcb4c642247acc8" target="_blank">ef9970c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ryurko/lab_tutorial/tree/12005cbd1eafd57aeb0c0c9f55b1124852dfb836" target="_blank">12005cb</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -502,6 +502,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ryurko/lab_tutorial/blob/12005cbd1eafd57aeb0c0c9f55b1124852dfb836/analysis/index.Rmd" target="_blank">12005cb</a>
+</td>
+<td>
+ryurko
+</td>
+<td>
+2020-05-01
+</td>
+<td>
+Fix typos
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ryurko/lab_tutorial/df0b9578b3a33ae171ec9058f506c258b954acfc/docs/index.html" target="_blank">df0b957</a>
+</td>
+<td>
+ryurko
+</td>
+<td>
+2020-05-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -668,16 +702,16 @@ ryurko
 </table>
 </div>
 </div>
-<p>Created and maintained by <a href="https://jdblischak.com/">John Blischak</a>, with co-authors <a href="https://pcarbo.github.io/">Peter Carbonetto</a> and <a href="http://stephenslab.uchicago.edu/">Matthew Stephens</a>, the <a href="https://jdblischak.github.io/workflowr/"><code>workflowr</code></a> package provides a wrapper for creating / maintaining a research website using R Markdown and version control. The package tagline is “<em>organized + reproducible + shareable data science in R</em>”.</p>
-<p>The only requirements to use <code>workflowr</code> are a knowledge of <code>R</code> and <code>R</code> Markdown, with either a <a href="https://github.com/">GitHub</a> or <a href="https://gitlab.com/">GitLab</a> account to host your site. <strong>No prior knowledge, <a href="https://jdblischak.github.io/workflowr/articles/wflow-04-how-it-works.html">or even installation</a>, of Git is necessary to get started!</strong></p>
+<p>Created and maintained by <a href="https://jdblischak.com/">John Blischak</a>, with co-authors <a href="https://pcarbo.github.io/">Peter Carbonetto</a> and <a href="http://stephenslab.uchicago.edu/">Matthew Stephens</a>, the <a href="https://jdblischak.github.io/workflowr/"><code>workflowr</code></a> package provides a wrapper for publishing a research website using R Markdown and version control. The package tagline is “<em>organized + reproducible + shareable data science in R</em>”.</p>
+<p>The only requirements to use <code>workflowr</code> are a knowledge of <code>R</code> and R Markdown, with either a <a href="https://github.com/">GitHub</a> or <a href="https://gitlab.com/">GitLab</a> account to host your site. <strong>No prior knowledge, <a href="https://jdblischak.github.io/workflowr/articles/wflow-04-how-it-works.html">or even installation</a>, of <a href="https://git-scm.com/">Git</a> is necessary to get started!</strong></p>
 </div>
 <div id="first-steps" class="section level1">
 <h1>First steps…</h1>
 <p>You can install <code>workflowr</code> via <a href="https://cran.r-project.org/package=workflowr">CRAN</a>:</p>
 <pre class="r"><code>install.packages(&quot;workflowr&quot;)</code></pre>
-<p>To create a project with <code>workflowr</code>, first access the package:</p>
+<p>To create a project with <code>workflowr</code>, first load the package:</p>
 <pre class="r"><code>library(workflowr)</code></pre>
-<p><strong>If you have never created a Git repository before</strong>: you first need to initialize Git with your name and email. This information is how Git tracks your changes, but this does NOT need to be the same name / email used for GitHub or GitLab. Since <code>workflowr</code> relies on <a href="https://cran.r-project.org/package=git2r"><code>git2r</code></a> (which is an interface to <a href="https://libgit2.github.com/"><code>libgit2</code></a> and the reason you do NOT need to have Git installed prior to using), you can do this directly in <code>R</code> with a <code>workflowr</code> function:</p>
+<p><strong>If you have NEVER created a Git repository before</strong>: you first need to initialize Git with your name and email. This information is how Git tracks your changes, but this does NOT need to be the same name / email used for your GitHub or GitLab accounts. Since <code>workflowr</code> relies on <a href="https://cran.r-project.org/package=git2r"><code>git2r</code></a> (which is an interface to <a href="https://libgit2.github.com/"><code>libgit2</code></a> and the reason you do NOT need to have Git installed prior to using), you can do this directly in <code>R</code> with a <code>workflowr</code> function:</p>
 <pre class="r"><code># Initialize your Git info (only need to do once per computer)
 wflow_git_config(user.name = &quot;Your Name&quot;, user.email = &quot;your@email&quot;)</code></pre>
 <p>Now (within your current directory) you can create a <code>workflowr</code> repository:</p>
@@ -768,7 +802,7 @@ ryurko
 </div>
 <div id="publishing-the-website" class="section level1">
 <h1>Publishing the website</h1>
-<p>Initially the <code>docs/</code> (or <code>public/</code>) folder will be empty, because the starting three <code>analysis/</code> files (<code>index.Rmd</code>, <code>about.Rmd</code>, <code>license.Rmd</code>) were not ‘knit’ yet. Rather than manually doing this, <code>workflowr</code> naturally provides a function to generate the appropriate HTML files in the <code>docs/</code> folder:</p>
+<p>Initially the <code>docs/</code> (or <code>public/</code>) folder will be empty, because the starting three <code>analysis/</code> files (<code>index.Rmd</code>, <code>about.Rmd</code>, <code>license.Rmd</code>) were not built / ‘knit’ yet. Rather than manually doing this, <code>workflowr</code> provides a function to generate the appropriate HTML files in the <code>docs/</code> folder:</p>
 <pre class="r"><code>wflow_build()</code></pre>
 <p><img src="assets/wflow_build.png" width="500px" height="500px" style="display: block; margin: auto;" /></p>
 <p>
@@ -813,10 +847,10 @@ ryurko
 <pre class="r"><code>wflow_publish(c(&quot;analysis/index.Rmd&quot;, &quot;analysis/about.Rmd&quot;, &quot;analysis/license.Rmd&quot;),
               &quot;Publish the initial files for lab_tutorial&quot;)</code></pre>
 <p>The first argument is a vector of the <code>analysis/</code> files to generate the HTML files for, followed by the <strong>commit message</strong> describing the update. The convenience of using <code>wflow_publish()</code> is that it: (1) commits the R Markdown files, (2) builds their respective HTML files, and (3) commits the HTML files along with any other website style changes.</p>
-<p>In order to actually view the website for the project you need to link it to a GitHub/GitLab repository. This will then host the HTML files via their Pages feature. You can create the repository from within R (following permission prompts):</p>
+<p>In order to view the website for the project, you need to link it to a GitHub/GitLab repository. This will then host the HTML files via the Pages feature of the respective site. You can create the repository from within <code>R</code> (following permission prompts):</p>
 <pre class="r"><code>wflow_use_github(&quot;ryurko&quot;, &quot;lab_tutorial&quot;)</code></pre>
 <p>or using <code>wflow_use_gitlab()</code> for GitLab. <strong>NOTE: GitHub Pages only works for PUBLIC accounts, meaning your in-progress research website will always be visible. While that is admirable, you might be more comfortable using GitLab instead since then you can host your website with a PRIVATE repository.</strong> Both are free to use.</p>
-<p>Once the above steps are complete, then you need to “push” your edits to their respective destinations:</p>
+<p>Once the above steps are complete, then you need to <strong>push</strong> your edits to their respective destinations:</p>
 <pre class="r"><code>wflow_git_push()</code></pre>
 <p>In order for the GitHub pages site to appear you just need to do the following on your GitHub repository webpage: (1) go to Settings, (2) scroll to GitHub Pages, (3) choose “master branch docs/ folder” as the Source. Then after a few minutes the research website should be visible!</p>
 <br>

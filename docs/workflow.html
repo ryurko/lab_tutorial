@@ -546,16 +546,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtreeef9970ca0548e61214d093c58dcb4c642247acc8targetblankef9970ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ryurko/lab_tutorial/tree/ef9970ca0548e61214d093c58dcb4c642247acc8" target="_blank">ef9970c</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtree12005cbd1eafd57aeb0c0c9f55b1124852dfb836targetblank12005cba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ryurko/lab_tutorial/tree/12005cbd1eafd57aeb0c0c9f55b1124852dfb836" target="_blank">12005cb</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtreeef9970ca0548e61214d093c58dcb4c642247acc8targetblankef9970ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomryurkolabtutorialtree12005cbd1eafd57aeb0c0c9f55b1124852dfb836targetblank12005cba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ryurko/lab_tutorial/tree/ef9970ca0548e61214d093c58dcb4c642247acc8" target="_blank">ef9970c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ryurko/lab_tutorial/tree/12005cbd1eafd57aeb0c0c9f55b1124852dfb836" target="_blank">12005cb</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -603,6 +603,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ryurko/lab_tutorial/blob/12005cbd1eafd57aeb0c0c9f55b1124852dfb836/analysis/workflow.Rmd" target="_blank">12005cb</a>
+</td>
+<td>
+ryurko
+</td>
+<td>
+2020-05-01
+</td>
+<td>
+Fix typos
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ryurko/lab_tutorial/df0b9578b3a33ae171ec9058f506c258b954acfc/docs/workflow.html" target="_blank">df0b957</a>
+</td>
+<td>
+ryurko
+</td>
+<td>
+2020-05-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -722,11 +756,11 @@ Create working site with initial walkthrough and examples
 <li>commit / publish updates, <code>wflow_publish()</code>,</li>
 <li>push updates to GitHub/GitLab, <code>wflow_git_push()</code>.</li>
 </ol>
-<p>If you are collaborating on the project then you should obviously follow the Git tenet: commit, pull, push. You can pull updates from collaborators via <code>wflow_git_pull()</code>.</p>
+<p>If you are collaborating on the project then you should obviously follow the Git tenets: commit, pull, push. You can pull updates from collaborators via <code>wflow_git_pull()</code>.</p>
 </div>
 <div id="customizing-the-website" class="section level1">
 <h1>Customizing the website</h1>
-<p>In order to access the new analysis HTML file on the site, you need a link to it somehow. You can just use a <a href="ex-analysis.html">link on a page in markdown</a>. Or you can modify the <code>_site.yml</code> directly to add a new tab.</p>
+<p>In order to access the new analysis HTML file on the site, without manually typing the url in each time, you need to provide a link to it somehow. You can just use a <a href="ex-analysis.html">link on a page in markdown</a>. Or you can modify the <code>_site.yml</code> directly to add a new tab.</p>
 <p><img src="assets/site-edit.png" /></p>
 <p>You can change the theme with <code>_site.yml</code>, or take direct control <a href="https://jdblischak.github.io/workflowr/articles/wflow-02-customization.html">using a custom CSS file</a> to modify the appearance of your site as you wish.</p>
 <p>Following any updates to <code>_site.yml</code>, or cosmetic changes that affect all HTML files you will need to use the <code>republish = TRUE</code> argument when publishing the updated site:</p>
