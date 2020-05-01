@@ -16,12 +16,12 @@ knitr::include_graphics("assets/hex-workflowr.png")
 
 Created and maintained by [John Blischak](https://jdblischak.com/), with co-authors 
 [Peter Carbonetto](https://pcarbo.github.io/) and [Matthew Stephens](http://stephenslab.uchicago.edu/), the [`workflowr`](https://jdblischak.github.io/workflowr/) package provides a wrapper
-for creating / maintaining a research website using R Markdown and version control. 
+for publishing a research website using R Markdown and version control. 
 The package tagline is "_organized + reproducible + shareable data science in R_".
 
-The only requirements to use `workflowr` are a knowledge of `R` and `R` Markdown, with
+The only requirements to use `workflowr` are a knowledge of `R` and R Markdown, with
 either a [GitHub](https://github.com/) or [GitLab](https://gitlab.com/) account to
-host your site. __No prior knowledge, [or even installation](https://jdblischak.github.io/workflowr/articles/wflow-04-how-it-works.html), of Git is necessary to get started!__
+host your site. __No prior knowledge, [or even installation](https://jdblischak.github.io/workflowr/articles/wflow-04-how-it-works.html), of [Git](https://git-scm.com/) is necessary to get started!__
 
 # First steps...
 
@@ -31,16 +31,16 @@ You can install `workflowr` via [CRAN](https://cran.r-project.org/package=workfl
 install.packages("workflowr")
 ```
 
-To create a project with `workflowr`, first access the package:
+To create a project with `workflowr`, first load the package:
 
 ```{r library, echo = TRUE, eval = FALSE}
 library(workflowr)
 ```
 
-__If you have never created a Git repository before__: you first need to initialize
+__If you have NEVER created a Git repository before__: you first need to initialize
 Git with your name and email. This information is how Git tracks your changes, but
-this does NOT need to be the same name / email used for GitHub or GitLab. Since
-`workflowr` relies on [`git2r`](https://cran.r-project.org/package=git2r) (which
+this does NOT need to be the same name / email used for your GitHub or GitLab accounts. 
+Since `workflowr` relies on [`git2r`](https://cran.r-project.org/package=git2r) (which
 is an interface to [`libgit2`](https://libgit2.github.com/) and the reason you 
 do NOT need to have Git installed prior to using), you can do this directly in `R` 
 with a `workflowr` function:
@@ -77,9 +77,9 @@ Optional directories for organization include: `code/`, `data/`, and `output/`.
 # Publishing the website
 
 Initially the `docs/` (or `public/`) folder will be empty, because the starting three `analysis/`
-files (`index.Rmd`, `about.Rmd`, `license.Rmd`) were not 'knit' yet. Rather than
-manually doing this, `workflowr` naturally provides a function to generate the
-appropriate HTML files in the `docs/` folder:
+files (`index.Rmd`, `about.Rmd`, `license.Rmd`) were not built / 'knit' yet. Rather than
+manually doing this, `workflowr` provides a function to generate the appropriate 
+HTML files in the `docs/` folder:
 
 ```{r build-demo, echo = TRUE, eval = FALSE}
 wflow_build()
@@ -110,9 +110,10 @@ using `wflow_publish()` is that it: (1) commits the R Markdown files, (2) builds
 their respective HTML files, and (3) commits the HTML files along with any other
 website style changes.
 
-In order to actually view the website for the project you need to link it to a 
-GitHub/GitLab repository. This will then host the HTML files via their Pages 
-feature. You can create the repository from within R (following permission prompts):
+In order to view the website for the project, you need to link it to a 
+GitHub/GitLab repository. This will then host the HTML files via the Pages 
+feature of the respective site. You can create the repository from within `R` 
+(following permission prompts):
 
 ```{r github-demo, echo = TRUE, eval = FALSE}
 wflow_use_github("ryurko", "lab_tutorial")
@@ -123,7 +124,7 @@ accounts, meaning your in-progress research website will always be visible. Whil
 that is admirable, you might be more comfortable using GitLab instead since then you
 can host your website with a PRIVATE repository.__ Both are free to use.
 
-Once the above steps are complete, then you need to "push" your edits to their
+Once the above steps are complete, then you need to __push__ your edits to their
 respective destinations:
 
 ```{r push-demo, echo = TRUE, eval = FALSE}

@@ -21,14 +21,15 @@ Once you have made your file and edits, the __workflow__ follows the same steps 
 #. commit / publish updates, `wflow_publish()`,
 #. push updates to GitHub/GitLab, `wflow_git_push()`.
 
-If you are collaborating on the project then you should obviously follow the Git tenet:
+If you are collaborating on the project then you should obviously follow the Git tenets:
 commit, pull, push. You can pull updates from collaborators via `wflow_git_pull()`.
 
 # Customizing the website
 
-In order to access the new analysis HTML file on the site, you need a link to it
-somehow. You can just use a [link on a page in markdown](ex-analysis.html). Or you 
-can modify the `_site.yml` directly to add a new tab.
+In order to access the new analysis HTML file on the site, without manually typing
+the url in each time, you need to provide a link to it somehow. You can just use 
+a [link on a page in markdown](ex-analysis.html). Or you  can modify the `_site.yml` 
+directly to add a new tab.
 
 ![](assets/site-edit.png)
 
