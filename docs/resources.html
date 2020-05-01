@@ -9,9 +9,11 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="ryurko" />
 
+<meta name="date" content="2020-04-30" />
 
-<title>Home</title>
+<title>Resources</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +21,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -270,6 +275,90 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -277,6 +366,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -329,7 +428,9 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Home</h1>
+<h1 class="title toc-ignore">Resources</h1>
+<h4 class="author">ryurko</h4>
+<h4 class="date">2020-04-30</h4>
 
 </div>
 
@@ -357,7 +458,7 @@ $(document).ready(function () {
 <strong>Last updated:</strong> 2020-05-01
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>lab_tutorial/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -379,66 +480,6 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
 <p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
-</p>
-</div>
-<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
-<div class="panel-body">
-<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20200429code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20200429)</code> </a>
-</p>
-</div>
-<div id="strongSeedstrongcodesetseed20200429code" class="panel-collapse collapse">
-<div class="panel-body">
-<p>The command <code>set.seed(20200429)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
-</p>
-</div>
-<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
-<div class="panel-body">
-<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
-</p>
-</div>
-<div id="strongCachestrongnone" class="panel-collapse collapse">
-<div class="panel-body">
-<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
-</p>
-</div>
-<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
-<div class="panel-body">
-<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
 </div>
 </div>
 </div>
@@ -481,7 +522,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML (<code>docs/index.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/resources.Rmd</code>) and HTML (<code>docs/resources.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -510,7 +551,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/ryurko/lab_tutorial/blob/3bebdd9a0d7398a7d314d63b1f71ef14a1543868/analysis/index.Rmd" target="_blank">3bebdd9</a>
+<a href="https://github.com/ryurko/lab_tutorial/blob/3bebdd9a0d7398a7d314d63b1f71ef14a1543868/analysis/resources.Rmd" target="_blank">3bebdd9</a>
 </td>
 <td>
 ryurko
@@ -522,40 +563,6 @@ ryurko
 Create working site with initial walkthrough and examples
 </td>
 </tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ryurko/lab_tutorial/59d2a214e91cc5350c584c8397dd37fbbd2c06c1/docs/index.html" target="_blank">59d2a21</a>
-</td>
-<td>
-ryurko
-</td>
-<td>
-2020-04-30
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ryurko/lab_tutorial/blob/8acf54b084e095e101a776a1d330f496ea089236/analysis/index.Rmd" target="_blank">8acf54b</a>
-</td>
-<td>
-ryurko
-</td>
-<td>
-2020-04-29
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -563,79 +570,17 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<div id="what-is-workflowr" class="section level1">
-<h1>What is <code>workflowr</code>?</h1>
-<p><img src="assets/hex-workflowr.png" /></p>
-<p>Created and maintained by <a href="https://jdblischak.com/">John Blischak</a>, with co-authors <a href="https://pcarbo.github.io/">Peter Carbonetto</a> and <a href="http://stephenslab.uchicago.edu/">Matthew Stephens</a>, the <a href="https://jdblischak.github.io/workflowr/"><code>workflowr</code></a> package provides a wrapper for creating / maintaining a research website using R Markdown and version control. The package tagline is “<em>organized + reproducible + shareable data science in R</em>”.</p>
-<p>The only requirements to use <code>workflowr</code> are a knowledge of <code>R</code> and <code>R</code> Markdown, with either a <a href="https://github.com/">GitHub</a> or <a href="https://gitlab.com/">GitLab</a> account to host your site. <strong>No prior knowledge, <a href="https://jdblischak.github.io/workflowr/articles/wflow-04-how-it-works.html">or even installation</a>, of Git is necessary to get started!</strong></p>
+<div id="workflowr" class="section level1">
+<h1><code>workflowr</code></h1>
+<p>The package documentation is fantastic: <a href="https://jdblischak.github.io/workflowr/" class="uri">https://jdblischak.github.io/workflowr/</a></p>
 </div>
-<div id="first-steps" class="section level1">
-<h1>First steps…</h1>
-<p>You can install <code>workflowr</code> via <a href="https://cran.r-project.org/package=workflowr">CRAN</a>:</p>
-<pre class="r"><code>install.packages(&quot;workflowr&quot;)</code></pre>
-<p>To create a project with <code>workflowr</code>, first access the package:</p>
-<pre class="r"><code>library(workflowr)</code></pre>
-<p><strong>If you have never created a Git repository before</strong>: you first need to initialize Git with your name and email. This information is how Git tracks your changes, but this does NOT need to be the same name / email used for GitHub or GitLab. Since <code>workflowr</code> relies on <a href="https://cran.r-project.org/package=git2r"><code>git2r</code></a> (which is an interface to <a href="https://libgit2.github.com/"><code>libgit2</code></a> and the reason you do NOT need to have Git installed prior to using), you can do this directly in <code>R</code> with a <code>workflowr</code> function:</p>
-<pre class="r"><code># Initialize your Git info (only need to do once per computer)
-wflow_git_config(user.name = &quot;Your Name&quot;, user.email = &quot;your@email&quot;)</code></pre>
-<p>Now (within your current directory) you can create a <code>workflowr</code> repository:</p>
-<pre class="r"><code>wflow_start(&quot;lab_tutorial&quot;)</code></pre>
-<p><img src="assets/wflow_start_output.png" /></p>
-<p>This will change the current working directory to the newly created project folder, with the following layout:</p>
-<p><img src="assets/wflow_directory.png" /></p>
-<p>There are two <strong>required</strong> subdirectories:</p>
-<ol>
-<li><code>analysis/</code>: stores the R Markdown files of your analysis, along with <code>index.Rmd</code> (for the homepage) and <code>_site.yml</code> (for the configuration settings such as theme),</li>
-<li><code>docs/</code> (or <code>public/</code> for GitLab): stores the HTML files used for generating the site, as well as figures created by code chunks.</li>
-</ol>
-<p>Optional directories for organization include: <code>code/</code>, <code>data/</code>, and <code>output/</code>.</p>
+<div id="git" class="section level1">
+<h1>Git</h1>
+<p>By far the best resource for learning to use Git with R / RStudio is Jenny Bryan’s free online book: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a></p>
 </div>
-<div id="publishing-the-website" class="section level1">
-<h1>Publishing the website</h1>
-<p>Initially the <code>docs/</code> (or <code>public/</code>) folder will be empty, because the starting three <code>analysis/</code> files (<code>index.Rmd</code>, <code>about.Rmd</code>, <code>license.Rmd</code>) were not ‘knit’ yet. Rather than manually doing this, <code>workflowr</code> naturally provides a function to generate the appropriate HTML files in the <code>docs/</code> folder:</p>
-<pre class="r"><code>wflow_build()</code></pre>
-<p><img src="assets/wflow_build.png" /></p>
-<p>This builds each HTML file <strong>in separate R sessions</strong> to avoid conflicts (such as shared variable names) and <strong>sets the same seed</strong> from the <code>_workflowr.yml</code> settings. The <code>wflow_build()</code> function only builds R Markdown files if their .Rmd files have been modified more recently than the current HTML files. After running <code>wflow_build()</code> you will see the “website” in the Viewer tab of RStudio.</p>
-<p>However, “building” the site is not enough. In order to “publish” the website online, we need to specify which <code>analysis/</code> files to build and “publish” their resulting HTML files:</p>
-<pre class="r"><code>wflow_publish(c(&quot;analysis/index.Rmd&quot;, &quot;analysis/about.Rmd&quot;, &quot;analysis/license.Rmd&quot;),
-              &quot;Publish the initial files for lab_tutorial&quot;)</code></pre>
-<p>The first argument is a vector of the <code>analysis/</code> files to generate the HTML files for, followed by the <strong>commit message</strong> describing the update. The convenience of using <code>wflow_publish()</code> is that it: (1) commits the R Markdown files, (2) builds their respective HTML files, and (3) commits the HTML files along with any other website style changes.</p>
-<p>In order to actually view the website for the project you need to link it to a GitHub/GitLab repository. This will then host the HTML files via their Pages feature. You can create the repository from within R (following permission prompts):</p>
-<pre class="r"><code>wflow_use_github(&quot;ryurko&quot;, &quot;lab_tutorial&quot;)</code></pre>
-<p>or using <code>wflow_use_gitlab()</code> for GitLab. <strong>NOTE: GitHub Pages only works for PUBLIC accounts, meaning your in-progress research website will always be visible. While that is admirable, you might be more comfortable using GitLab instead since then you can host your website with a PRIVATE repository.</strong> Both are free to use.</p>
-<p>Once the above steps are complete, then you need to “push” your edits to their respective destinations:</p>
-<pre class="r"><code>wflow_git_push()</code></pre>
-<p>In order for the GitHub pages site to appear you just need to do the following on your GitHub repository webpage: (1) go to Settings, (2) scroll to GitHub Pages, (3) choose “master branch docs/ folder” as the Source. Then after a few minutes the research website should be visible!</p>
-<br>
-<p>
-<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
-<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
-</button>
-</p>
-<div id="workflowr-sessioninfo" class="collapse">
-<pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 3.5.0 (2018-04-23)
-Platform: x86_64-apple-darwin15.6.0 (64-bit)
-Running under: macOS Sierra 10.12.5
-
-Matrix products: default
-BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
-
-locale:
-[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
- [1] workflowr_1.6.1 Rcpp_1.0.3      rprojroot_1.3-2 digest_0.6.23  
- [5] later_0.8.0     R6_2.4.1        backports_1.1.5 git2r_0.26.1   
- [9] magrittr_1.5    evaluate_0.14   stringi_1.4.3   fs_1.3.2       
-[13] promises_1.0.1  whisker_0.3-2   rmarkdown_1.13  tools_3.5.0    
-[17] stringr_1.4.0   glue_1.3.1      httpuv_1.5.1    xfun_0.7       
-[21] yaml_2.2.0      compiler_3.5.0  htmltools_0.3.6 knitr_1.23     </code></pre>
-</div>
+<div id="r-markdown" class="section level1">
+<h1>R Markdown</h1>
+<p><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></p>
 </div>
 
 
@@ -652,6 +597,8 @@ footer is added to webpages before the MathJax javascript. -->
 </script>
 
 
+</div>
+</div>
 
 </div>
 
